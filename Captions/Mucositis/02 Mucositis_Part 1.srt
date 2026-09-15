@@ -1,0 +1,78 @@
+﻿1
+00:00:01,333 --> 00:00:04,041
+Part 1: What is mucositis?
+
+2
+00:00:04,708 --> 00:00:08,583
+Radiation works mostly on rapidly dividing
+cells.
+
+3
+00:00:08,583 --> 00:00:11,958
+Your tumor is rapidly
+dividing and growing,
+
+4
+00:00:12,000 --> 00:00:15,000
+and we want radiation to kill the tumor.
+
+5
+00:00:17,458 --> 00:00:18,500
+However,
+
+6
+00:00:18,500 --> 00:00:22,083
+your mucosal membranes are also rapidly
+dividing.
+
+7
+00:00:22,083 --> 00:00:25,500
+As cells are secreting fluids
+to line your mouth and throat.
+
+8
+00:00:26,291 --> 00:00:28,791
+These cells are sensitive to radiation
+
+9
+00:00:28,791 --> 00:00:32,500
+and can become inflamed
+or irritated during radiation.
+
+10
+00:00:32,500 --> 00:00:35,333
+This is mucositis.
+
+11
+00:00:35,333 --> 00:00:39,166
+Mucositis, may first appear
+ as red as tender tissue
+
+12
+00:00:39,166 --> 00:00:42,791
+along your tongue,
+back of your mouth, and throat.
+
+13
+00:00:43,750 --> 00:00:45,958
+If it worsens, you may notice
+
+14
+00:00:45,958 --> 00:00:49,833
+some white spots or ulcers along
+the tongue, cheek, or throat.
+
+15
+00:00:50,541 --> 00:00:54,250
+They likely will be painful
+and sensitive to touch.
+
+16
+00:00:54,250 --> 00:00:59,125
+Sometimes you can see them yourself by
+shining light and looking into the mirror.
+
+17
+00:00:59,458 --> 00:01:04,208
+Your doctor will also examine you weekly
+during treatment to look for mucositis.

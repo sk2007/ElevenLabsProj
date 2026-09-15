@@ -1,0 +1,196 @@
+﻿1
+00:00:01,541 --> 00:00:04,208
+I've decided to proceed with radiation
+treatment.
+
+2
+00:00:04,208 --> 00:00:06,791
+What's next?
+
+3
+00:00:06,791 --> 00:00:08,416
+Once a radiation treatment
+
+4
+00:00:08,416 --> 00:00:12,000
+plan has been made,
+the planning process begins.
+
+5
+00:00:12,208 --> 00:00:15,416
+This involves gathering any related
+imaging studies,
+
+6
+00:00:15,416 --> 00:00:19,083
+such as previous MRI's or Pet CT scans,
+
+7
+00:00:19,083 --> 00:00:22,458
+or obtaining an updated one if necessary.
+
+8
+00:00:22,708 --> 00:00:26,833
+The primary planning step is called a CT
+simulation scan.
+
+9
+00:00:27,250 --> 00:00:30,416
+This is where you come into the radiation
+oncology department
+
+10
+00:00:30,416 --> 00:00:35,666
+to get a special CT scan that is used
+for radiation treatment purposes.
+
+11
+00:00:35,666 --> 00:00:38,166
+This scan is different from a regular CT
+
+12
+00:00:38,166 --> 00:00:40,791
+you may have gotten in the past.
+
+13
+00:00:40,791 --> 00:00:43,125
+For the CT simulation scan,
+
+14
+00:00:43,125 --> 00:00:46,083
+You will meet the team of radiation
+therapists.
+
+15
+00:00:46,083 --> 00:00:50,750
+They are specially trained professionals
+who are experts in acquiring this scan
+
+16
+00:00:50,750 --> 00:00:54,000
+and in operating the radiation treatment
+machines.
+
+17
+00:00:55,375 --> 00:00:58,750
+The therapist will position
+you on a CT scanner table
+
+18
+00:00:58,750 --> 00:01:02,666
+in a special way, depending on what
+you are getting treatment for.
+
+19
+00:01:03,291 --> 00:01:08,583
+This may involve creating a special mask
+in the shape of your head and face,
+
+20
+00:01:09,208 --> 00:01:13,000
+or creating bolsters or pillows shaped 
+to your body,
+
+21
+00:01:13,000 --> 00:01:16,583
+or positioning your arms and legs at 
+specific angles
+
+22
+00:01:16,583 --> 00:01:19,791
+all depending on your unique situation.
+
+23
+00:01:20,458 --> 00:01:23,666
+Once you are positioned,
+the therapist use stickers
+
+24
+00:01:23,666 --> 00:01:27,958
+or other indicators
+to mark specific locations on your body,
+
+25
+00:01:27,958 --> 00:01:31,958
+and will take photos
+to record the exact method of set up.
+
+26
+00:01:32,208 --> 00:01:35,416
+This is important
+as the position will be replicated
+
+27
+00:01:35,416 --> 00:01:38,625
+each time you receive radiation treatment.
+
+28
+00:01:39,083 --> 00:01:41,291
+Then you will undergo a CT scan
+
+29
+00:01:41,291 --> 00:01:43,375
+in this special position.
+
+30
+00:01:45,916 --> 00:01:48,916
+Again, depending on your specific plan,
+
+31
+00:01:48,916 --> 00:01:51,708
+you may receive other special instructions
+
+32
+00:01:51,708 --> 00:01:54,833
+such as how to breathe
+during the scan itself,
+
+33
+00:01:54,833 --> 00:01:57,833
+or you may need a special dye or contrast
+
+34
+00:01:57,833 --> 00:02:00,833
+to help with illuminating your anatomy.
+
+35
+00:02:01,125 --> 00:02:04,791
+Once the CT scan is complete,
+you will go home.
+
+36
+00:02:05,083 --> 00:02:08,416
+No radiation
+treatment is given on this planning day.
+
+37
+00:02:09,083 --> 00:02:11,500
+This planning CT scan will be used 
+
+38
+00:02:11,500 --> 00:02:13,958
+in conjunction with your previous images,
+
+39
+00:02:13,958 --> 00:02:18,000
+if applicable, to determine the radiation
+treatment target
+
+40
+00:02:18,000 --> 00:02:21,166
+and will be used for the radiation
+treatment planning.
+
+41
+00:02:21,541 --> 00:02:23,875
+Planning usually takes up to one week
+
+42
+00:02:23,875 --> 00:02:28,000
+and includes rigorous checks
+with the doctors and medical physics team
+
+43
+00:02:28,000 --> 00:02:33,416
+for quality assurance to ensure a safe
+and accurate delivery of the radiation.

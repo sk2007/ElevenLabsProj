@@ -1,0 +1,88 @@
+﻿1
+00:00:01,583 --> 00:00:03,041
+What is radiation?
+
+2
+00:00:03,041 --> 00:00:05,750
+Why is it important?
+
+3
+00:00:05,750 --> 00:00:09,708
+Radiation treatment
+can be thought of as high energy rays,
+
+4
+00:00:09,708 --> 00:00:13,208
+like powerful
+x-rays that are directed at the tumors
+
+5
+00:00:13,208 --> 00:00:16,208
+to stop the cells
+from growing and dividing.
+
+6
+00:00:16,666 --> 00:00:21,500
+This video series focuses
+specifically on external beam radiation,
+
+7
+00:00:21,500 --> 00:00:24,625
+in which the radiation is delivered
+from an energy source
+
+8
+00:00:24,625 --> 00:00:28,375
+outside the body through a beam of energy.
+
+9
+00:00:28,375 --> 00:00:33,208
+No radiation is implanted within the body,
+but you may hear of another
+
+10
+00:00:33,208 --> 00:00:37,041
+type of radiation called brachytherapy,
+which is internal.
+
+11
+00:00:37,041 --> 00:00:39,833
+That will not be discussed here.
+
+12
+00:00:39,833 --> 00:00:43,208
+Radiation works
+because these X-ray beams cause breaks
+
+13
+00:00:43,208 --> 00:00:48,250
+in the DNA of the cancer cells,
+which prevents them from surviving.
+
+14
+00:00:49,333 --> 00:00:52,791
+This is also how radiation targets
+the cancer cells
+
+15
+00:00:52,791 --> 00:00:55,333
+while sparing your healthy cells.
+
+16
+00:00:55,333 --> 00:00:56,625
+Your healthy cells
+
+17
+00:00:56,625 --> 00:01:00,708
+have the cellular machinery
+within them to repair these DNA breaks
+
+18
+00:01:00,708 --> 00:01:04,791
+so the healthy cells can survive
+while the cancer cells, due
+
+19
+00:01:04,791 --> 00:01:09,666
+to their abnormal growth, do not have
+the tools necessary to repair the DNA.
