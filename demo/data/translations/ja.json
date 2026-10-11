@@ -1,0 +1,163 @@
+[
+  {
+    "index": 1,
+    "start": "00:00:00,458",
+    "end": "00:00:03,750",
+    "original": "What is radiation therapy and what to expect?",
+    "translated": "放射線療法とは何か、何が予想されるか？"
+  },
+  {
+    "index": 2,
+    "start": "00:00:03,750",
+    "end": "00:00:05,625",
+    "original": "Introduction",
+    "translated": "導入"
+  },
+  {
+    "index": 3,
+    "start": "00:00:05,625",
+    "end": "00:00:09,708",
+    "original": "While you may have heard of chemotherapy and surgery to treat cancer,",
+    "translated": "がん治療における化学療法や手術については聞いたことがあるかもしれませんが、"
+  },
+  {
+    "index": 4,
+    "start": "00:00:09,708",
+    "end": "00:00:12,500",
+    "original": "Radiation therapy is often less well known",
+    "translated": "放射線療法はあまり知られていません"
+  },
+  {
+    "index": 5,
+    "start": "00:00:12,500",
+    "end": "00:00:15,833",
+    "original": "and talked about far less in popular media.",
+    "translated": "そして一般メディアでははるかに少なく語られています。"
+  },
+  {
+    "index": 6,
+    "start": "00:00:15,833",
+    "end": "00:00:20,625",
+    "original": "This video will discuss what external beam radiation therapy is, its role in",
+    "translated": "このビデオでは、外部放射線治療が何であるか、その役割と"
+  },
+  {
+    "index": 7,
+    "start": "00:00:20,625",
+    "end": "00:00:25,708",
+    "original": "treating cancer, and what you can expect in your radiation treatment journey.",
+    "translated": "がん治療においての役割、そして放射線治療の過程で"
+  },
+  {
+    "index": 8,
+    "start": "00:00:26,125",
+    "end": "00:00:29,750",
+    "original": "Cancer occurs when cells in your body start to grow too fast",
+    "translated": "がんは、体内の細胞が過剰に速く成長し始めるときに発生します。"
+  },
+  {
+    "index": 9,
+    "start": "00:00:29,750",
+    "end": "00:00:34,875",
+    "original": "and in an uncontrolled way, without any checks or balances on their growth.",
+    "translated": "そしてその成長に対する監視や制御なしに、無秩序に進行します。"
+  },
+  {
+    "index": 10,
+    "start": "00:00:34,875",
+    "end": "00:00:38,541",
+    "original": "The unchecked growth of these cells lead to tumors that cause symptoms",
+    "translated": "これらの細胞の制御されない成長は腫瘍をもたらし、"
+  },
+  {
+    "index": 11,
+    "start": "00:00:38,541",
+    "end": "00:00:43,708",
+    "original": "you may be feeling or cause your otherwise healthy organs to malfunction.",
+    "translated": "あなたが感じる症状や、健康な臓器が正常に機能しなくなる原因となるかもしれません。"
+  },
+  {
+    "index": 12,
+    "start": "00:00:44,041",
+    "end": "00:00:48,416",
+    "original": "There are three main tools that doctors use to combat the cancer cells",
+    "translated": "医者ががん細胞と戦うために使う主要な3つの方法があります。"
+  },
+  {
+    "index": 13,
+    "start": "00:00:48,416",
+    "end": "00:00:52,166",
+    "original": "to stop them from growing, or to kill them all together.",
+    "translated": "成長を止めるか、それらを完全に殺すための方法です。"
+  },
+  {
+    "index": 14,
+    "start": "00:00:52,250",
+    "end": "00:00:56,833",
+    "original": "These are One: Systemic Treatments, which go throughout your body",
+    "translated": "一つ目は全身療法で、体全体に作用するものです。"
+  },
+  {
+    "index": 15,
+    "start": "00:00:56,833",
+    "end": "00:01:00,500",
+    "original": "system, such as chemotherapy or immunotherapy.",
+    "translated": "化学療法や免疫療法のようなものです。"
+  },
+  {
+    "index": 16,
+    "start": "00:01:00,500",
+    "end": "00:01:05,125",
+    "original": "Two: Surgery and three: Radiation.",
+    "translated": "二つ目は手術、そして三つ目は放射線治療です。"
+  },
+  {
+    "index": 17,
+    "start": "00:01:05,458",
+    "end": "00:01:08,291",
+    "original": "Chemotherapy uses medications or",
+    "translated": "化学療法は薬剤または"
+  },
+  {
+    "index": 18,
+    "start": "00:01:08,291",
+    "end": "00:01:11,541",
+    "original": "chemical compounds to kill the unwanted cancer cells,",
+    "translated": "化学物質を使ってがん細胞を殺します。"
+  },
+  {
+    "index": 19,
+    "start": "00:01:11,541",
+    "end": "00:01:13,958",
+    "original": "and immunotherapy boosts your body's",
+    "translated": "免疫療法は体の免疫システムを強化し、"
+  },
+  {
+    "index": 20,
+    "start": "00:01:13,958",
+    "end": "00:01:16,125",
+    "original": "own immune system to fight the cancer.",
+    "translated": "がんと戦うものです。"
+  },
+  {
+    "index": 21,
+    "start": "00:01:16,208",
+    "end": "00:01:19,083",
+    "original": "Targeted drugs are precision treatments",
+    "translated": "標的治療薬は精密な治療法であり、"
+  },
+  {
+    "index": 22,
+    "start": "00:01:19,208",
+    "end": "00:01:23,625",
+    "original": "that single out specific molecular components important to cancer cell growth.",
+    "translated": "がん細胞の成長に重要な特定の分子成分を標的にします。"
+  },
+  {
+    "index": 23,
+    "start": "00:01:25,750",
+    "end": "00:01:30,000",
+    "original": "Surgery is the physical removal of those cells from the body.",
+    "translated": "手術はそれらの細胞を体から物理的に除去することを言います。"
+  }
+]

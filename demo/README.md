@@ -7,6 +7,7 @@ For the purpose of this demonstration, the application focuses exclusively on th
 - **Part:** Intro (`01 Gen Intro_Intro`, source video: `gen_intro_v1_multisub.mp4`)
 - **Title:** *"What is radiation therapy and what to expect?"*
 - **Segment Count:** 23 subtitle segments
+- **Video reference:** [UCLA Oncology Radiation Therapy: Introduction](https://vimeo.com/1097732782)
 
 ---
 
@@ -52,16 +53,10 @@ Then visit **http://localhost:5050** in your browser.
 
 ## Deploying to Vercel
 
-Import the repository in Vercel and set **Root Directory** to `.` (the repository
-root). The demo uses shared Python modules in `src/` and captions and source video
-files outside `demo/`, so `demo` cannot be used as the Vercel project root. The
-root-level `vercel.json` routes requests to `api/index.py`, which serves this Flask
-app. Vercel will install dependencies from the root `requirements.txt`.
-
-The generated `output/` directory is git-ignored and is about 2.7 GB locally, so
-it is not part of the deployment. The page can load, but translated segment data,
-audio, and dubbed-video endpoints will be empty or return 404 until those demo
-artifacts are hosted somewhere accessible and the app is configured to read them.
+Import the repository in Vercel and set **Root Directory** to `demo`. This folder
+contains the Flask app, its Vercel entry point, dependencies, and the sample
+caption, translation, audio, source video, and dubbed videos for this single-video
+demo. Vercel installs the minimal dependencies from `demo/requirements.txt`.
 
 ### Key Interactive Features
 - **Language Switcher**: Toggle instantly between Spanish (`es`), Korean (`ko`), Simplified Chinese (`zh`), Japanese (`ja`), Armenian (`hy`), and Farsi (`fa`).

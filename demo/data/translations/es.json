@@ -1,0 +1,163 @@
+[
+  {
+    "index": 1,
+    "start": "00:00:00,458",
+    "end": "00:00:03,750",
+    "original": "What is radiation therapy and what to expect?",
+    "translated": "¿Qué es la radioterapia y qué esperar?"
+  },
+  {
+    "index": 2,
+    "start": "00:00:03,750",
+    "end": "00:00:05,625",
+    "original": "Introduction",
+    "translated": "Introducción"
+  },
+  {
+    "index": 3,
+    "start": "00:00:05,625",
+    "end": "00:00:09,708",
+    "original": "While you may have heard of chemotherapy and surgery to treat cancer,",
+    "translated": "Aunque puede que hayas oído hablar de la quimioterapia y la cirugía para tratar el cáncer,"
+  },
+  {
+    "index": 4,
+    "start": "00:00:09,708",
+    "end": "00:00:12,500",
+    "original": "Radiation therapy is often less well known",
+    "translated": "La radioterapia es a menudo menos conocida"
+  },
+  {
+    "index": 5,
+    "start": "00:00:12,500",
+    "end": "00:00:15,833",
+    "original": "and talked about far less in popular media.",
+    "translated": "y se habla mucho menos de ella en los medios populares."
+  },
+  {
+    "index": 6,
+    "start": "00:00:15,833",
+    "end": "00:00:20,625",
+    "original": "This video will discuss what external beam radiation therapy is, its role in",
+    "translated": "Este video discutirá qué es la radioterapia de haz externo, su papel en"
+  },
+  {
+    "index": 7,
+    "start": "00:00:20,625",
+    "end": "00:00:25,708",
+    "original": "treating cancer, and what you can expect in your radiation treatment journey.",
+    "translated": "el tratamiento del cáncer, y qué puedes esperar en tu viaje de tratamiento con radiación."
+  },
+  {
+    "index": 8,
+    "start": "00:00:26,125",
+    "end": "00:00:29,750",
+    "original": "Cancer occurs when cells in your body start to grow too fast",
+    "translated": "El cáncer ocurre cuando las células en tu cuerpo comienzan a crecer demasiado rápido"
+  },
+  {
+    "index": 9,
+    "start": "00:00:29,750",
+    "end": "00:00:34,875",
+    "original": "and in an uncontrolled way, without any checks or balances on their growth.",
+    "translated": "y de manera descontrolada, sin ningún control o balance sobre su crecimiento."
+  },
+  {
+    "index": 10,
+    "start": "00:00:34,875",
+    "end": "00:00:38,541",
+    "original": "The unchecked growth of these cells lead to tumors that cause symptoms",
+    "translated": "El crecimiento descontrolado de estas células lleva a tumores que causan síntomas"
+  },
+  {
+    "index": 11,
+    "start": "00:00:38,541",
+    "end": "00:00:43,708",
+    "original": "you may be feeling or cause your otherwise healthy organs to malfunction.",
+    "translated": "que puedes estar sintiendo o hacer que tus órganos saludables dejen de funcionar correctamente."
+  },
+  {
+    "index": 12,
+    "start": "00:00:44,041",
+    "end": "00:00:48,416",
+    "original": "There are three main tools that doctors use to combat the cancer cells",
+    "translated": "Hay tres herramientas principales que los médicos utilizan para combatir las células cancerígenas"
+  },
+  {
+    "index": 13,
+    "start": "00:00:48,416",
+    "end": "00:00:52,166",
+    "original": "to stop them from growing, or to kill them all together.",
+    "translated": "para detener su crecimiento, o para eliminarlas por completo."
+  },
+  {
+    "index": 14,
+    "start": "00:00:52,250",
+    "end": "00:00:56,833",
+    "original": "These are One: Systemic Treatments, which go throughout your body",
+    "translated": "Estas son Uno: Tratamientos sistémicos, que recorren todo su sistema corporal,"
+  },
+  {
+    "index": 15,
+    "start": "00:00:56,833",
+    "end": "00:01:00,500",
+    "original": "system, such as chemotherapy or immunotherapy.",
+    "translated": "como la quimioterapia o la inmunoterapia."
+  },
+  {
+    "index": 16,
+    "start": "00:01:00,500",
+    "end": "00:01:05,125",
+    "original": "Two: Surgery and three: Radiation.",
+    "translated": "Dos: Cirugía y tres: Radiación."
+  },
+  {
+    "index": 17,
+    "start": "00:01:05,458",
+    "end": "00:01:08,291",
+    "original": "Chemotherapy uses medications or",
+    "translated": "La quimioterapia utiliza medicamentos o"
+  },
+  {
+    "index": 18,
+    "start": "00:01:08,291",
+    "end": "00:01:11,541",
+    "original": "chemical compounds to kill the unwanted cancer cells,",
+    "translated": "compuestos químicos para matar las células cancerígenas no deseadas,"
+  },
+  {
+    "index": 19,
+    "start": "00:01:11,541",
+    "end": "00:01:13,958",
+    "original": "and immunotherapy boosts your body's",
+    "translated": "y la inmunoterapia estimula el sistema inmune del cuerpo"
+  },
+  {
+    "index": 20,
+    "start": "00:01:13,958",
+    "end": "00:01:16,125",
+    "original": "own immune system to fight the cancer.",
+    "translated": "para combatir el cáncer."
+  },
+  {
+    "index": 21,
+    "start": "00:01:16,208",
+    "end": "00:01:19,083",
+    "original": "Targeted drugs are precision treatments",
+    "translated": "Los fármacos dirigidos son tratamientos de precisión"
+  },
+  {
+    "index": 22,
+    "start": "00:01:19,208",
+    "end": "00:01:23,625",
+    "original": "that single out specific molecular components important to cancer cell growth.",
+    "translated": "que se dirigen a componentes moleculares específicos importantes para el crecimiento de las células cancerígenas."
+  },
+  {
+    "index": 23,
+    "start": "00:01:25,750",
+    "end": "00:01:30,000",
+    "original": "Surgery is the physical removal of those cells from the body.",
+    "translated": "La cirugía es la eliminación física de esas células del cuerpo."
+  }
+]

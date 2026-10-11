@@ -22,25 +22,27 @@ import sys
 from pathlib import Path
 from flask import Flask, jsonify, send_file, abort, Response, render_template_string
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-if str(BASE_DIR) not in sys.path:
-    sys.path.insert(0, str(BASE_DIR))
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+LANGS = ["es", "ko", "zh", "ja", "hy", "fa"]
+LANG_NAMES = {
+    "es": "Spanish", "ko": "Korean", "zh": "Chinese (Simplified)",
+    "ja": "Japanese", "hy": "Armenian", "fa": "Farsi (Persian)",
+}
 
-from src.modules import MODULES, LANGS, LANG_NAMES, LANG_SUB_CODE
-from src.srt_parser import parse_srt
+from srt_parser import parse_srt
 
 app = Flask(__name__)
 
-CAPTIONS_DIR = BASE_DIR / "Captions"
-OUTPUT_DIR = BASE_DIR / "output"
-TRANSLATIONS_DIR = OUTPUT_DIR / "translations"
-AUDIO_RAW_DIR = OUTPUT_DIR / "audio_raw"
-FINAL_DIR = OUTPUT_DIR / "final"
+CAPTIONS_DIR = DATA_DIR / "captions"
+TRANSLATIONS_DIR = DATA_DIR / "translations"
+AUDIO_RAW_DIR = DATA_DIR / "audio"
+FINAL_DIR = DATA_DIR / "timing"
 
 # Target video for the demo: first video in the library
 DEMO_MODULE_KEY = "gen-intro"
-DEMO_MODULE = MODULES[DEMO_MODULE_KEY]
-DEMO_PART = DEMO_MODULE.parts[0]  # Part("gen_intro_v1", "01 Gen Intro_Intro", "Intro")
+DEMO_VIDEO = "gen_intro_v1"
+DEMO_STEM = "01 Gen Intro_Intro"
 
 DEMO_HTML = """<!DOCTYPE html>
 <html lang="en">
@@ -802,19 +804,18 @@ def api_demo_data():
     if lang not in LANGS:
         lang = "es"
 
-    final_dir = DEMO_MODULE.final_dir
-    stem = DEMO_PART.stem
+    stem = DEMO_STEM
 
     # Source English captions
-    orig_srt_path = CAPTIONS_DIR / final_dir / f"{stem}.srt"
+    orig_srt_path = CAPTIONS_DIR / "en.srt"
     orig_segments = {s.index: s for s in parse_srt(orig_srt_path)} if orig_srt_path.exists() else {}
 
     # Translated JSON
-    trans_json_path = TRANSLATIONS_DIR / lang / final_dir / f"{stem}.json"
+    trans_json_path = TRANSLATIONS_DIR / f"{lang}.json"
     trans_list = json.loads(trans_json_path.read_text(encoding="utf-8")) if trans_json_path.exists() else []
 
     # Recalculated SRT
-    recalc_srt_path = FINAL_DIR / lang / final_dir / f"{stem}.srt"
+    recalc_srt_path = FINAL_DIR / f"{lang}.srt"
     recalc_segments = {s.index: s for s in parse_srt(recalc_srt_path)} if recalc_srt_path.exists() else {}
 
     combined_segments = []
@@ -838,19 +839,19 @@ def api_demo_data():
 
     return jsonify({
         "module": DEMO_MODULE_KEY,
-        "part_video": DEMO_PART.video,
+        "part_video": DEMO_VIDEO,
         "part_stem": stem,
         "lang": lang,
         "segments": combined_segments,
         "assembled_wav_url": f"/media/assembled-audio/{lang}/{stem}.wav",
-        "dubbed_video_url": f"/media/dubbed-video/{lang}/{DEMO_PART.out_file(lang)}",
+        "dubbed_video_url": f"/media/dubbed-video/{lang}/{DEMO_VIDEO}_{lang}.mp4",
     })
 
 
 @app.route("/media/source-video")
 def serve_source_video():
     """Serves the original English source video."""
-    path = DEMO_PART.source_video(BASE_DIR, DEMO_MODULE)
+    path = DATA_DIR / "video" / "source.mp4"
     if not path.exists():
         abort(404, "Source video not found")
     return send_file(str(path), mimetype="video/mp4", conditional=True)
@@ -859,7 +860,9 @@ def serve_source_video():
 @app.route("/media/raw-segment/<lang>/<filename>")
 def serve_raw_segment(lang: str, filename: str):
     """Serves individual segment MP3 audio synthesized by ElevenLabs."""
-    path = AUDIO_RAW_DIR / lang / DEMO_MODULE.final_dir / filename
+    if lang not in LANGS or not re.fullmatch(r"01 Gen Intro_Intro_seg\d{3}\.mp3", filename):
+        abort(404, "Segment audio not found")
+    path = AUDIO_RAW_DIR / lang / filename
     if not path.exists():
         abort(404, "Segment audio not found")
     return send_file(str(path), mimetype="audio/mpeg", conditional=True)
@@ -868,7 +871,9 @@ def serve_raw_segment(lang: str, filename: str):
 @app.route("/media/assembled-audio/<lang>/<filename>")
 def serve_assembled_audio(lang: str, filename: str):
     """Serves master assembled WAV audio."""
-    path = FINAL_DIR / lang / DEMO_MODULE.final_dir / filename
+    if lang not in LANGS or filename != f"{DEMO_STEM}.wav":
+        abort(404, "Assembled audio not found")
+    path = AUDIO_RAW_DIR / f"master_{lang}.wav"
     if not path.exists():
         abort(404, "Assembled audio not found")
     return send_file(str(path), mimetype="audio/wav", conditional=True)
@@ -877,7 +882,9 @@ def serve_assembled_audio(lang: str, filename: str):
 @app.route("/media/dubbed-video/<lang>/<filename>")
 def serve_dubbed_video(lang: str, filename: str):
     """Serves the final dubbed and muxed MP4 video."""
-    path = OUTPUT_DIR / DEMO_MODULE.out_dir / lang / filename
+    if lang not in LANGS or filename != f"{DEMO_VIDEO}_{lang}.mp4":
+        abort(404, "Dubbed video not found")
+    path = DATA_DIR / "video" / f"dubbed_{lang}.mp4"
     if not path.exists():
         abort(404, "Dubbed video not found")
     return send_file(str(path), mimetype="video/mp4", conditional=True)
@@ -886,7 +893,9 @@ def serve_dubbed_video(lang: str, filename: str):
 @app.route("/media/vtt/<lang>")
 def serve_vtt_subtitles(lang: str):
     """Generates WebVTT subtitles synchronized with the dubbed audio."""
-    srt_path = FINAL_DIR / lang / DEMO_MODULE.final_dir / f"{DEMO_PART.stem}.srt"
+    if lang not in LANGS:
+        abort(404, "SRT not found")
+    srt_path = FINAL_DIR / f"{lang}.srt"
     if not srt_path.exists():
         abort(404, "SRT not found")
     srt_text = srt_path.read_text(encoding="utf-8-sig")
