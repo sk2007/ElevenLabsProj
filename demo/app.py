@@ -1,9 +1,6 @@
 """Savjani Lab - Dubbing Pipeline Interactive Demo.
 
-Focused specifically on the flagship introductory video:
-  Module: General Introduction ("Gen Intro")
-  Part: Intro ("01 Gen Intro_Intro", video: gen_intro_v1)
-  Title: "What is radiation therapy and what to expect?"
+Focused on UCLA Oncology Radiation Therapy: Introduction from Vimeo.
 
 Demonstrates the complete 4-stage pipeline:
   Stage 1: Subtitle Translation (OpenAI GPT-4o Oncology Model)
@@ -40,16 +37,16 @@ AUDIO_RAW_DIR = DATA_DIR / "audio"
 FINAL_DIR = DATA_DIR / "timing"
 
 # Target video for the demo: first video in the library
-DEMO_MODULE_KEY = "gen-intro"
-DEMO_VIDEO = "gen_intro_v1"
-DEMO_STEM = "01 Gen Intro_Intro"
+DEMO_MODULE_KEY = "ucla-radiation-introduction"
+DEMO_VIDEO = "ucla_radiation_therapy_intro"
+DEMO_STEM = DEMO_VIDEO
 
 DEMO_HTML = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pipeline Workflow Demo | Gen Intro</title>
+<title>Pipeline Workflow Demo | UCLA Radiation Therapy</title>
 <style>
   :root {
     --primary: #2563eb;
@@ -437,7 +434,7 @@ DEMO_HTML = """<!DOCTYPE html>
 <header>
   <div class="header-left">
     <div class="header-title">Savjani Lab • Video Dubbing Pipeline Demo</div>
-    <span class="badge badge-highlight">Target: Gen Intro — Intro</span>
+    <span class="badge badge-highlight">Target: UCLA Radiation Therapy — Introduction</span>
   </div>
   <div>
     <span class="badge">OpenAI GPT-4o + ElevenLabs Multilingual v2</span>
@@ -447,8 +444,8 @@ DEMO_HTML = """<!DOCTYPE html>
 <div class="focus-bar">
   <div class="video-target-info">
     <span style="font-weight: 600;">Library Video:</span>
-    <span class="video-tag">gen_intro_v1_multisub.mp4</span>
-    <span style="color: var(--text-muted);">(Part 1: "What is radiation therapy and what to expect?")</span>
+    <span class="video-tag">UCLA Oncology Radiation Therapy: Introduction</span>
+    <span style="color: var(--text-muted);">(Source: Vimeo, shared by Rachel Cooley)</span>
   </div>
 
   <div class="lang-picker">
@@ -492,7 +489,7 @@ DEMO_HTML = """<!DOCTYPE html>
       <div class="spec-badge">
         <span>Model: gpt-4o</span>
         <span>•</span>
-        <span>Source: Captions/Gen Intro/01 Gen Intro_Intro.srt</span>
+        <span>Source: English captions for UCLA Oncology Radiation Therapy: Introduction</span>
       </div>
     </div>
 
@@ -609,12 +606,12 @@ DEMO_HTML = """<!DOCTYPE html>
 
     <div class="code-container">
       <span class="code-comment">// Orchestration Command Executed (src/module_dubber.py)</span><br>
-      ffmpeg -y -i gen_intro_v1_multisub.mp4 -i 01_Gen_Intro_Intro_<span class="code-val" id="cmd-lang">es</span>.wav \\<br>
+      ffmpeg -y -i ucla_radiation_therapy_intro.mp4 -i dubbed_audio_<span class="code-val" id="cmd-lang">es</span>.wav \\<br>
       &nbsp;&nbsp;-i final_ko.srt -i final_zh.srt -i final_ja.srt -i final_hy.srt -i final_fa.srt -i final_es.srt \\<br>
       &nbsp;&nbsp;-map 0:v:0 -map 1:a:0 -map 2:s:0 -map 3:s:0 -map 4:s:0 -map 5:s:0 -map 6:s:0 -map 7:s:0 \\<br>
       &nbsp;&nbsp;-c:v copy -c:a aac -b:a 192k -c:s mov_text \\<br>
       &nbsp;&nbsp;-metadata:s:s:0 language=kor -metadata:s:s:1 language=zho -metadata:s:s:2 language=jpn ... \\<br>
-      &nbsp;&nbsp;-t 92.694 output/gen_intro_dubbed/<span class="code-val" id="cmd-lang-out">es</span>/gen_intro_v1_<span class="code-val" id="cmd-lang-file">es</span>.mp4
+      &nbsp;&nbsp;-t 92.694 output/dubbed/ucla_radiation_therapy_intro_<span class="code-val" id="cmd-lang-file">es</span>.mp4
     </div>
 
     <div class="video-dual-grid">
@@ -642,6 +639,10 @@ DEMO_HTML = """<!DOCTYPE html>
     </div>
   </section>
 </main>
+
+<footer style="max-width: 1300px; margin: 0 auto 32px; padding: 0 32px; color: #64748b; font-size: 12px;">
+  Source video: <a href="https://vimeo.com/1097732782" target="_blank" rel="noopener noreferrer">UCLA Oncology Radiation Therapy: Introduction</a> by Rachel Cooley, licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-ND</a>.
+</footer>
 
 <script>
 const LANG_MAP = {"es":"Spanish", "ko":"Korean", "zh":"Chinese (Simplified)", "ja":"Japanese", "hy":"Armenian", "fa":"Farsi (Persian)"};
@@ -823,7 +824,7 @@ def api_demo_data():
         idx = item["index"]
         orig_s = orig_segments.get(idx)
         recalc_s = recalc_segments.get(idx)
-        raw_fname = f"{stem}_seg{idx:03d}.mp3"
+        raw_fname = f"segment_{idx:03d}.mp3"
 
         combined_segments.append({
             "index": idx,
@@ -843,8 +844,8 @@ def api_demo_data():
         "part_stem": stem,
         "lang": lang,
         "segments": combined_segments,
-        "assembled_wav_url": f"/media/assembled-audio/{lang}/{stem}.wav",
-        "dubbed_video_url": f"/media/dubbed-video/{lang}/{DEMO_VIDEO}_{lang}.mp4",
+        "assembled_wav_url": f"/media/assembled-audio/{lang}/master.wav",
+        "dubbed_video_url": f"/media/dubbed-video/{lang}/dubbed.mp4",
     })
 
 
@@ -860,7 +861,7 @@ def serve_source_video():
 @app.route("/media/raw-segment/<lang>/<filename>")
 def serve_raw_segment(lang: str, filename: str):
     """Serves individual segment MP3 audio synthesized by ElevenLabs."""
-    if lang not in LANGS or not re.fullmatch(r"01 Gen Intro_Intro_seg\d{3}\.mp3", filename):
+    if lang not in LANGS or not re.fullmatch(r"segment_\d{3}\.mp3", filename):
         abort(404, "Segment audio not found")
     path = AUDIO_RAW_DIR / lang / filename
     if not path.exists():
@@ -871,7 +872,7 @@ def serve_raw_segment(lang: str, filename: str):
 @app.route("/media/assembled-audio/<lang>/<filename>")
 def serve_assembled_audio(lang: str, filename: str):
     """Serves master assembled WAV audio."""
-    if lang not in LANGS or filename != f"{DEMO_STEM}.wav":
+    if lang not in LANGS or filename != "master.wav":
         abort(404, "Assembled audio not found")
     path = AUDIO_RAW_DIR / f"master_{lang}.wav"
     if not path.exists():
@@ -882,7 +883,7 @@ def serve_assembled_audio(lang: str, filename: str):
 @app.route("/media/dubbed-video/<lang>/<filename>")
 def serve_dubbed_video(lang: str, filename: str):
     """Serves the final dubbed and muxed MP4 video."""
-    if lang not in LANGS or filename != f"{DEMO_VIDEO}_{lang}.mp4":
+    if lang not in LANGS or filename != "dubbed.mp4":
         abort(404, "Dubbed video not found")
     path = DATA_DIR / "video" / f"dubbed_{lang}.mp4"
     if not path.exists():
@@ -908,7 +909,7 @@ def main():
     parser.add_argument("--port", type=int, default=5050, help="Port to listen on (default: 5050)")
     parser.add_argument("--host", type=str, default="127.0.0.1", help="Host address")
     args = parser.parse_args()
-    print(f"Starting Gen Intro Workflow Demo at http://{args.host}:{args.port}")
+    print(f"Starting UCLA Radiation Therapy Workflow Demo at http://{args.host}:{args.port}")
     app.run(host=args.host, port=args.port, debug=True)
 
 

@@ -1,68 +1,26 @@
-# Savjani Lab: End-to-End Dubbing Pipeline Demo
+# UCLA Oncology Radiation Therapy Demo
 
-This folder contains the interactive demo webpage showcasing the complete 4-stage pipeline for automated oncology patient education video translation and dubbing.
+This folder contains a self-contained, single-video dubbing workflow demo for [UCLA Oncology Radiation Therapy: Introduction](https://vimeo.com/1097732782), shared by Rachel Cooley on Vimeo. The local source video is downloaded from Vimeo's official download option and is attributed to the creator. The Vimeo page identifies its license as **Attribution–NoDerivatives**.
 
-For the purpose of this demonstration, the application focuses exclusively on the **first video in the video library**:
-- **Module:** General Introduction (`gen-intro`)
-- **Part:** Intro (`01 Gen Intro_Intro`, source video: `gen_intro_v1_multisub.mp4`)
-- **Title:** *"What is radiation therapy and what to expect?"*
-- **Segment Count:** 23 subtitle segments
-- **Video reference:** [UCLA Oncology Radiation Therapy: Introduction](https://vimeo.com/1097732782)
+The sample contains 23 subtitle segments and demonstrates:
 
----
+1. English caption review and translated segment data.
+2. Per-segment ElevenLabs audio playback.
+3. Assembled audio and recalculated subtitle timing.
+4. Source and dubbed video playback.
 
-## The 4 Pipeline Stages Demonstrated
-
-```
-[ Stage 1: Captions & Translation ]
-   • Source English SRT: Captions/Gen Intro/01 Gen Intro_Intro.srt
-   • OpenAI GPT-4o oncology-specialized translation
-   • JSON output segments: output/translations/<lang>/Gen Intro/01 Gen Intro_Intro.json
-             │
-             ▼
-[ Stage 2: ElevenLabs TTS Synthesis ]
-   • Per-segment voice generation: eleven_multilingual_v2
-   • Stock voice: Rachel (21m00Tcm4TlvDq8ikWAM)
-   • 23 segment MP3s: output/audio_raw/<lang>/Gen Intro/01 Gen Intro_Intro_segXXX.mp3
-             │
-             ▼
-[ Stage 3: Audio Assembly & Retiming ]
-   • Segment concatenation via FFmpeg into master WAV
-   • Precise speech duration measured via ffprobe
-   • SRT timestamps recalculated from scratch (output/final/<lang>/Gen Intro/01 Gen Intro_Intro.wav + .srt)
-             │
-             ▼
-[ Stage 4: Video Orchestration & Multi-Sub Dubbing ]
-   • Source video: gen_intro_vids/gen_intro_v1_multisub.mp4
-   • Muxed with dubbed WAV audio and multi-language mov_text subtitle tracks
-   • Smart tail-trimming to match natural narration length
-   • Final output: output/gen_intro_dubbed/<lang>/gen_intro_v1_<lang>.mp4
-```
-
----
-
-## Running the Demo Webpage
-
-Run the demo server using Python 3:
+## Run locally
 
 ```bash
 python3 demo/app.py --port 5050
 ```
 
-Then visit **http://localhost:5050** in your browser.
+Visit <http://localhost:5050>.
 
-## Deploying to Vercel
+## Deploy to Vercel
 
-Import the repository in Vercel and set **Root Directory** to `demo`. Vercel
-detects the Flask app from `app.py` and sends requests directly to its routes, so
-no rewrite configuration is needed. This folder contains the app, dependencies,
-and the sample caption, translation, audio, source video, and dubbed videos for
-this single-video demo. Vercel installs the minimal dependencies from
-`demo/requirements.txt`.
+Import the repository and set **Root Directory** to `demo`. Vercel detects the Flask app from `app.py` and sends requests directly to its routes. Dependencies and the single-video media bundle are inside this folder; install requirements from `requirements.txt`.
 
-### Key Interactive Features
-- **Language Switcher**: Toggle instantly between Spanish (`es`), Korean (`ko`), Simplified Chinese (`zh`), Japanese (`ja`), Armenian (`hy`), and Farsi (`fa`).
-- **Stage 1 (Translation)**: View the 23 source English segments alongside the target language translation and inspect the GPT-4o prompt guidelines.
-- **Stage 2 (ElevenLabs TTS)**: Listen to individual audio snippets synthesized for each of the 23 segments.
-- **Stage 3 (Assembly & Retiming)**: Listen to the master assembled audio track and compare the original English timing vs. recalculated spoken timing with pacing deltas.
-- **Stage 4 (Dubbed Video)**: Side-by-side video player comparing the original English source video against the newly dubbed video with embedded WebVTT subtitles.
+## Source attribution
+
+UCLA Oncology Radiation Therapy: Introduction by Rachel Cooley, via [Vimeo](https://vimeo.com/1097732782), licensed under [CC BY-ND](https://creativecommons.org/licenses/by-nd/4.0/).
