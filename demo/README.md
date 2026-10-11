@@ -53,10 +53,12 @@ Then visit **http://localhost:5050** in your browser.
 
 ## Deploying to Vercel
 
-Import the repository in Vercel and set **Root Directory** to `demo`. This folder
-contains the Flask app, its Vercel entry point, dependencies, and the sample
-caption, translation, audio, source video, and dubbed videos for this single-video
-demo. Vercel installs the minimal dependencies from `demo/requirements.txt`.
+Import the repository in Vercel and set **Root Directory** to `demo`. Vercel
+detects the Flask app from `app.py` and sends requests directly to its routes, so
+no rewrite configuration is needed. This folder contains the app, dependencies,
+and the sample caption, translation, audio, source video, and dubbed videos for
+this single-video demo. Vercel installs the minimal dependencies from
+`demo/requirements.txt`.
 
 ### Key Interactive Features
 - **Language Switcher**: Toggle instantly between Spanish (`es`), Korean (`ko`), Simplified Chinese (`zh`), Japanese (`ja`), Armenian (`hy`), and Farsi (`fa`).
