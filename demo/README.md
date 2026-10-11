@@ -50,6 +50,19 @@ python3 demo/app.py --port 5050
 
 Then visit **http://localhost:5050** in your browser.
 
+## Deploying to Vercel
+
+Import the repository in Vercel and set **Root Directory** to `.` (the repository
+root). The demo uses shared Python modules in `src/` and captions and source video
+files outside `demo/`, so `demo` cannot be used as the Vercel project root. The
+root-level `vercel.json` routes requests to `api/index.py`, which serves this Flask
+app. Vercel will install dependencies from the root `requirements.txt`.
+
+The generated `output/` directory is git-ignored and is about 2.7 GB locally, so
+it is not part of the deployment. The page can load, but translated segment data,
+audio, and dubbed-video endpoints will be empty or return 404 until those demo
+artifacts are hosted somewhere accessible and the app is configured to read them.
+
 ### Key Interactive Features
 - **Language Switcher**: Toggle instantly between Spanish (`es`), Korean (`ko`), Simplified Chinese (`zh`), Japanese (`ja`), Armenian (`hy`), and Farsi (`fa`).
 - **Stage 1 (Translation)**: View the 23 source English segments alongside the target language translation and inspect the GPT-4o prompt guidelines.
